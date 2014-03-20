@@ -40,5 +40,6 @@ dependencies {
     // Persistence.
     compile group: 'org.springframework.data', name: 'spring-data-commons', version: springDataVersion
 
-
+	//Event bus implementation
+	compile group: 'com.google.guava', name: 'guava', version: '16.0'
 }
