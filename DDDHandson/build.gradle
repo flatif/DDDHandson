@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+apply plugin: 'idea'
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+// jetty plugin config // TODO: configure these 6 lines in 2 with groovy syntax
+jettyRun.stopPort = 8581
+jettyRun.stopKey = 'stopKey'
+jettyRunWar.stopPort = 8581
+jettyRunWar.stopKey = 'stopKey'
+jettyStop.stopPort = 8581
+jettyStop.stopKey = 'stopKey'
+
+
+jettyRun.httpPort = 8585
+jettyRunWar.httpPort = 8585
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+def springVersion = '3.2.0.RELEASE'
+
+def springDataVersion = '1.5.1.RELEASE'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+
+    // Persistence.
+    compile group: 'org.springframework.data', name: 'spring-data-commons', version: springDataVersion
+
+
+}
