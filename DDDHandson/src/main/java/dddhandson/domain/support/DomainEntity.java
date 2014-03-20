@@ -1,9 +1,11 @@
 package dddhandson.domain.support;
 
+import dddhandson.domain.support.supertype.IdentifiedDomainObject;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+
 
 /**
  * Entita' di dominio.
@@ -13,7 +15,7 @@ import java.io.Serializable;
  * @param <ID>
  *            identificatore
  */
-public abstract class DomainEntity<E extends DomainEntity<E, ID>, ID extends Serializable> extends ConcurrencySafeEntity implements Serializable {
+public abstract class DomainEntity<E extends DomainEntity<E, ID>, ID extends Serializable>  {
 	
 	/**
 	 * @return identity

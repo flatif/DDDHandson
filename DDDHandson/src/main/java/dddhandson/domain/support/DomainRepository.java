@@ -1,5 +1,7 @@
 package dddhandson.domain.support;
 
+import dddhandson.domain.support.supertype.BaseRepository;
+
 import java.io.Serializable;
 
 /**
@@ -11,13 +13,5 @@ public interface DomainRepository<E extends DomainEntity<E, DOMAINID>, DOMAINID 
 	E findByIdentity(DOMAINID domainIdentity);
 	
 	E findByIdentityReadOnly(DOMAINID domainIdentity);
-	
-//	<S extends E> S save(S entity);
-//	
-//	void delete(E entity);
-//	
-//	Iterable<E> findAll();
-//	
-//	long count();
 	
 }

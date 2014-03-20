@@ -1,4 +1,4 @@
-package dddhandson.domain.support;
+package dddhandson.domain.support.supertype;
 
 import org.springframework.data.annotation.Id;
 
