@@ -1,12 +1,14 @@
 package dddhandson.application.command.support;
 
+import dddhandson.domain.support.Command;
+
 /**
  * Interfaccia per i gestori di comandi.
  *
  * @param <C>
  *            tipo del comando gestito
  */
-public interface CommandHandler<C> {
+public interface CommandHandler<C extends Command> {
 
     /**
      * @param command
@@ -15,6 +17,6 @@ public interface CommandHandler<C> {
      * @throws Exception
      *             in caso di errori
      */
-    public Object handle(C command) throws Exception;
+    public void handle(C command) throws Exception;
 
 }

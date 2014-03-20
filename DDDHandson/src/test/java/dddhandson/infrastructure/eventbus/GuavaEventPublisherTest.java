@@ -7,14 +7,15 @@ import org.junit.Test;
 import com.google.common.eventbus.Subscribe;
 
 import dddhandson.domain.support.DomainEvent;
+import dddhandson.infrastructure.eventpublisher.GuavaEventPublisher;
 
-public class GuavaEventBusTest {
+public class GuavaEventPublisherTest {
 
 	@Test
 	public void test() {
 		
 		final Listener listener = new Listener();
-		final GuavaEventBus eventBus = new GuavaEventBus();
+		final GuavaEventPublisher eventBus = new GuavaEventPublisher();
 		
 		eventBus.register(listener);
 		
