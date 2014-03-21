@@ -1,6 +1,6 @@
 package dddhandson.domain.support;
 
-public interface EventBus {
+public interface EventPublisher {
 	
 	void publish(DomainEvent domainEvent);
 }

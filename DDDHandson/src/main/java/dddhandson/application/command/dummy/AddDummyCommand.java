@@ -1,6 +1,8 @@
 package dddhandson.application.command.dummy;
 
-public class AddDummyCommand {
+import dddhandson.domain.support.Command;
+
+public class AddDummyCommand implements Command{
 
     private String name;
 

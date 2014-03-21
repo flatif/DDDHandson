@@ -11,10 +11,9 @@ public class AddDummyCommandHandler implements CommandHandler<AddDummyCommand> {
     private DummyAggregateRepository dummyAggregateRepository;
 
     @Override
-    public Object handle(AddDummyCommand command) throws Exception {
+    public void handle(AddDummyCommand command) throws Exception {
         DummyAggregate dummy = new DummyAggregate(command.getName());
         dummyAggregateRepository.save(dummy);
-        return null;
     }
 
 }
