@@ -1,10 +1,9 @@
 package dddhandson.domain.support;
 
-import dddhandson.domain.support.supertype.IdentifiedDomainObject;
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
-import java.io.Serializable;
 
 
 /**
@@ -15,7 +14,7 @@ import java.io.Serializable;
  * @param <ID>
  *            identificatore
  */
-public abstract class DomainEntity<E extends DomainEntity<E, ID>, ID extends Serializable>  {
+public abstract class DomainEntity<ID extends Serializable>  {
 	
 	/**
 	 * @return identity
@@ -30,8 +29,8 @@ public abstract class DomainEntity<E extends DomainEntity<E, ID>, ID extends Ser
 	 * @return {@code true} se la condizione e' verificata, altrimenti
 	 *         {@code false}
 	 */
-	public boolean sameIdentityAs(E other) {
-		if (other == null) {
+	public boolean sameIdentityAs(DomainEntity<ID> other) {
+		if (other == null || !other.getClass().equals(this.getClass())) {
 			return false;
 		}
 		ID identity = identity();
@@ -70,7 +69,7 @@ public abstract class DomainEntity<E extends DomainEntity<E, ID>, ID extends Ser
 		if (object == null || getClass() != object.getClass()) {
 			return false;
 		}
-		return sameIdentityAs((E) object);
+		return sameIdentityAs((DomainEntity<ID>) object);
 	}
 	
 	/**

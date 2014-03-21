@@ -2,7 +2,7 @@ package dddhandson.domain.model;
 
 import dddhandson.domain.support.DomainEntity;
 
-public class DummyAggregate extends DomainEntity<DummyAggregate, String> {
+public class DummyAggregate extends DomainEntity<String> {
 
     public String name;
 

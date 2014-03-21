@@ -1,7 +1,6 @@
 package dddhandson.domain.support;
 
 import java.io.Serializable;
-import java.util.List;
 
 public interface EventStore<ID extends Serializable> {
 

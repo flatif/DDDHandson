@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class EventSourcedDomainEntity<E, ID extends Serializable> {
+public abstract class EventSourcedDomainEntity<ID extends Serializable> {
 
     protected DomainEntityState<ID> state;
 
@@ -31,5 +31,9 @@ public abstract class EventSourcedDomainEntity<E, ID extends Serializable> {
         this.state.mutate(aDomainEvent);
         this.mutatingEvents.add(aDomainEvent);
     }
+    
+    public List<DomainEvent> getMutatingEvents() {
+		return mutatingEvents;
+	}
 
 }
