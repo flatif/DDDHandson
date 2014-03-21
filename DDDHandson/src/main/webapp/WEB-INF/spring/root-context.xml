@@ -4,7 +4,7 @@
 
 	<beans profile="memory">
 		<context:component-scan base-package="dddhandson">
-			<context:exclude-filter type="regex" expression="dddhandson\.[a-z]*\.port\.persistence\.(?!memory\.).*" />
+			<context:include-filter type="annotation" expression="Configuration"/>
 		</context:component-scan>
 		<!-- <bean id="path" class="java.nio.file.Paths" factory-method="get"> <constructor-arg value="file:/tmp/apprendistato/memory-db/" /> </bean> <bean id="charset" class="java.nio.charset.Charset" factory-method="forName"> <constructor-arg value="UTF-8" /> </bean> -->
 	</beans>

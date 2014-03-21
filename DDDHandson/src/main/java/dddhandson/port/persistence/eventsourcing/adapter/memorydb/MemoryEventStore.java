@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class MemoryEventStore<ID extends Serializable>  implements EventStore<ID>  {
+public class MemoryEventStore<ID extends Serializable>  implements EventStore<ID>  {
 
     protected Map<ID, List<EventDescriptor>> memoryStore;
 
     protected EventPublisher eventPublisher;
 
-    protected MemoryEventStore(EventPublisher eventPublisher) {
+    public MemoryEventStore(EventPublisher eventPublisher) {
         this.memoryStore = new HashMap<>();
         this.eventPublisher = eventPublisher;
     }
