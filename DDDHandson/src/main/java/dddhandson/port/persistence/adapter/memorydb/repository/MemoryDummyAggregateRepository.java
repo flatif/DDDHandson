@@ -2,7 +2,7 @@ package dddhandson.port.persistence.adapter.memorydb.repository;
 
 import dddhandson.domain.model.DummyAggregate;
 import dddhandson.domain.model.DummyAggregateRepository;
-import dddhandson.port.persistence.adapter.memorydb.support.BaseHashMapDomainRepository;
+import dddhandson.port.persistence.adapter.memorydb.repository.support.BaseHashMapDomainRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

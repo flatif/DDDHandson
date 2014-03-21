@@ -1,4 +1,4 @@
-package dddhandson.port.persistence.adapter.memorydb.support;
+package dddhandson.port.persistence.adapter.memorydb.repository.support;
 
 import dddhandson.domain.support.DomainEntity;
 

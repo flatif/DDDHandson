@@ -1,4 +1,4 @@
-package dddhandson.port.persistence.adapter.memorydb.support;
+package dddhandson.port.persistence.adapter.memorydb.repository.support;
 
 import dddhandson.domain.support.DomainEntity;
 import dddhandson.domain.support.DomainRepository;
@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public abstract class AbstractHashMapDomainRepository<E extends DomainEntity<E, ID>, ID extends Serializable> implements DomainRepository<E, ID> {
-	
-	protected abstract HashMap<ID, E> memoryStore();
+
+    protected abstract HashMap<ID, E> memoryStore();
 	
 	@Override
 	public E findByIdentity(ID domainIdentity) {
