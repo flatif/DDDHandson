@@ -25,7 +25,7 @@ public class GuavaEventPublisherTest {
 		
 	}
 
-	public class TestEvent implements DomainEvent {
+	public class TestEvent extends DomainEvent {
 		
 	}
 	

@@ -9,4 +9,15 @@ public class Reclamo extends EventSourcedDomainEntity {
     protected DomainEntityState createStateObject() {
         return new ReclamoState();
     }
+
+    protected ReclamoState state() {
+        return (ReclamoState) this.state;
+    }
+
+    public void apriReclamo() {
+        if (!state().isCreato()) {
+            throw new RuntimeException("assd");
+        }
+        this.apply(new ReclamoAperto(this.state().identity()));
+    }
 }

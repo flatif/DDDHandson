@@ -15,6 +15,7 @@ public class ApriReclamoCommandHandler implements CommandHandler<ApriReclamoComm
     @Override
     public void handle(ApriReclamoCommand command) throws Exception {
         Reclamo reclamo = new Reclamo();
+        reclamo.apriReclamo();
         this.reclamoRepository.save(reclamo);
     }
 }

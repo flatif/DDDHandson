@@ -1,0 +1,8 @@
+Narrativa:
+Cliente apre un reclamo perche' e' incazzato
+
+Scenario: Apertura Reclamo
+
+Dato che il sistema non contiene reclami
+Quando il cliente apre un reclamo
+Allora il sistema dovrebbe contenere un reclamo aperto
