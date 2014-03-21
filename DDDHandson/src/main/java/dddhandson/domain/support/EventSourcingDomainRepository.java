@@ -3,16 +3,16 @@ package dddhandson.domain.support;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
-public class EventSourcingDomainRepository<E extends EventSourcedDomainEntity<ID>, ID extends Serializable> implements DomainRepository<E, ID> {
+public class EventSourcingDomainRepository<E extends EventSourcedDomainEntity> implements DomainRepository<E, String> {
 	
-	private final EventStore<ID> eventStore;
+	private final EventStore eventStore;
 
-	public EventSourcingDomainRepository(EventStore<ID> eventStore) {
+	public EventSourcingDomainRepository(EventStore eventStore) {
 		this.eventStore = eventStore;
 	}
 
 	@Override
-	public E findByIdentity(ID domainIdentity,	Class<E> entityClass) {
+	public E findByIdentity(String domainIdentity,	Class<E> entityClass) {
 		final EventStream eventStream = eventStore.eventStream(domainIdentity);
 		return create(entityClass, eventStream);
 	}

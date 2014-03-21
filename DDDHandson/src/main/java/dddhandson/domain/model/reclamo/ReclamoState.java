@@ -2,12 +2,8 @@ package dddhandson.domain.model.reclamo;
 
 import dddhandson.domain.support.DomainEntityState;
 
-public class ReclamoState extends DomainEntityState<String> {
+public class ReclamoState extends DomainEntityState {
 
-    protected String reclamoId;
+    protected String stato;
 
-    @Override
-    public String identity() {
-        return reclamoId;
-    }
 }

@@ -2,10 +2,10 @@ package dddhandson.domain.support;
 
 import java.io.Serializable;
 
-public interface EventStore<ID extends Serializable> {
+public interface EventStore {
 
-    void save(ID aggregateId, EventStream eventStream);
+    void save(String aggregateId, EventStream eventStream);
 
-    EventStream eventStream (ID aggregateId);
+    EventStream eventStream (String aggregateId);
 
 }

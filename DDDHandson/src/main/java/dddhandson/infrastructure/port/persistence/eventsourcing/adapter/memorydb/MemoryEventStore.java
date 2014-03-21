@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MemoryEventStore<ID extends Serializable>  implements EventStore<ID>  {
+public class MemoryEventStore  implements EventStore  {
 
-    protected Map<ID, List<EventDescriptor>> memoryStore;
+    protected Map<String, List<EventDescriptor>> memoryStore;
 
     protected EventPublisher eventPublisher;
 
@@ -20,7 +20,7 @@ public class MemoryEventStore<ID extends Serializable>  implements EventStore<ID
     }
 
     @Override
-    public void save(ID aggregateId, EventStream eventStream) {
+    public void save(String aggregateId, EventStream eventStream) {
         List<EventDescriptor> eventDescriptors = memoryStore.get(aggregateId);
 
         if (eventDescriptors == null) {
@@ -39,7 +39,7 @@ public class MemoryEventStore<ID extends Serializable>  implements EventStore<ID
     }
 
     @Override
-    public EventStream eventStream(ID aggregateId) {
+    public EventStream eventStream(String aggregateId) {
         List<EventDescriptor> eventDescriptors = memoryStore.get(aggregateId);
         if (eventDescriptors == null) {
             throw new RuntimeException("Stream not found");

@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class EventSourcedDomainEntity<ID extends Serializable> extends DomainEntity<ID> {
+public abstract class EventSourcedDomainEntity extends DomainEntity<String> {
 
-    protected DomainEntityState<ID> state;
+    protected DomainEntityState state;
 
     private List<DomainEvent> mutatingEvents;
 
     //TODO: Do it with reflection and naming conventions
-    protected abstract DomainEntityState<ID> createStateObject();
+    protected abstract DomainEntityState createStateObject();
 
     public EventSourcedDomainEntity() {
         this.mutatingEvents = new ArrayList<DomainEvent>();
@@ -25,7 +25,7 @@ public abstract class EventSourcedDomainEntity<ID extends Serializable> extends 
     }
 
     @Override
-    public ID identity() {
+    public String identity() {
         return state.identity();
     }
 

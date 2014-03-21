@@ -6,8 +6,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
-public abstract class DomainEntityState<ID extends Serializable> {
+public abstract class DomainEntityState {
 
     private static final String MUTATOR_METHOD_NAME = "when";
 
@@ -16,7 +17,11 @@ public abstract class DomainEntityState<ID extends Serializable> {
 
     private int unmutatedVersion;
 
-    public abstract ID identity();
+    private String identity;
+
+    public String identity() {
+        return identity;
+    }
 
     public int mutatedVersion() {
         return this.unmutatedVersion() + 1;
@@ -28,6 +33,7 @@ public abstract class DomainEntityState<ID extends Serializable> {
 
     public DomainEntityState() {
         this.unmutatedVersion = 0;
+        this.identity = UUID.randomUUID().toString().toUpperCase();
     }
 
     protected void loadFromHistory(EventStream eventStream) {
