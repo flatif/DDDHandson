@@ -21,7 +21,7 @@ jettyRunWar.httpPort = 8585
 sourceCompatibility = 1.7
 version = '1.0'
 
-def springVersion = '3.2.0.RELEASE'
+def springVersion = '3.2.8.RELEASE'
 
 def springDataVersion = '1.5.1.RELEASE'
 
@@ -39,7 +39,10 @@ dependencies {
 
     // Persistence.
     compile group: 'org.springframework.data', name: 'spring-data-commons', version: springDataVersion
+	compile group: 'javax', name: 'javaee-api', version: '7.0'
 
 	//Event bus implementation
 	compile group: 'com.google.guava', name: 'guava', version: '16.0'
+	
+	compile 'org.hibernate:hibernate-validator:4.3.1.Final'
 }
