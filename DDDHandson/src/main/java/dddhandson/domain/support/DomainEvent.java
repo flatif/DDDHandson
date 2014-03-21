@@ -1,5 +1,5 @@
 package dddhandson.domain.support;
 
-public interface DomainEvent {
+public class DomainEvent {
 
 }

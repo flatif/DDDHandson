@@ -30,9 +30,7 @@ public abstract class DomainEntityState<ID extends Serializable> {
         this.unmutatedVersion = 0;
     }
 
-    //CHIEDERE: è meglio gestire qui o nell'EventSourecdDomainEntity il mutate dello stato? E la versione chi la deve gestire?
-    protected DomainEntityState(
-            EventStream eventStream) {
+    protected void loadFromHistory(EventStream eventStream) {
 
         for (DomainEvent event : eventStream.events()) {
             this.mutate(event);
@@ -44,7 +42,7 @@ public abstract class DomainEntityState<ID extends Serializable> {
 
 
     /*
-     *  PLUMBING
+     *  PLUMBING, in java we dont have @dynamic
      */
 
     protected void mutate(DomainEvent aDomainEvent) {

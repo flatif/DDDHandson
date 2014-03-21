@@ -1,4 +1,4 @@
-package dddhandson.domain.support;
+package dddhandson.application.command.support;
 
 public interface CommandDispatcher {
 

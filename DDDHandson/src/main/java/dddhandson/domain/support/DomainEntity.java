@@ -9,8 +9,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Entita' di dominio.
  * 
- * @param <E>
- *            entita'
  * @param <ID>
  *            identificatore
  */

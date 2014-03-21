@@ -1,7 +1,6 @@
-package dddhandson.port.persistence.eventsourcing.adapter.memorydb;
+package dddhandson.infrastructure.port.persistence.eventsourcing.adapter.memorydb;
 
 import dddhandson.domain.support.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.ArrayList;

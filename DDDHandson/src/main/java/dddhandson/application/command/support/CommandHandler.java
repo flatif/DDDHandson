@@ -1,7 +1,5 @@
 package dddhandson.application.command.support;
 
-import dddhandson.domain.support.Command;
-
 /**
  * Interfaccia per i gestori di comandi.
  *

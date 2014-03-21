@@ -3,7 +3,7 @@ package dddhandson.domain.support;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
-public class EventSourcingDomainRepository<ID extends Serializable> implements DomainRepository<ID> {
+public class EventSourcingDomainRepository<E extends EventSourcedDomainEntity<ID>, ID extends Serializable> implements DomainRepository<E, ID> {
 	
 	private final EventStore<ID> eventStore;
 
@@ -12,16 +12,15 @@ public class EventSourcingDomainRepository<ID extends Serializable> implements D
 	}
 
 	@Override
-	public <E extends EventSourcedDomainEntity<ID>> E findByIdentity(ID domainIdentity,	Class<E> entityClass) {
+	public E findByIdentity(ID domainIdentity,	Class<E> entityClass) {
 		final EventStream eventStream = eventStore.eventStream(domainIdentity);
-		
 		return create(entityClass, eventStream);
 	}
 
 	@Override
-	public void save(EventSourcedDomainEntity<ID> entity) {
-		final EventStream stream = new EventStream(entity.getMutatingEvents(), entity.state.mutatedVersion());
-		eventStore.save(entity.state.identity(), stream);
+	public void save(E entity) {
+		final EventStream stream = new EventStream(entity.mutatingEvents(), entity.mutatedVersion());
+		eventStore.save(entity.identity(), stream);
 	}
 
 	private <E> E create(Class<E> clazz, EventStream eventStream){

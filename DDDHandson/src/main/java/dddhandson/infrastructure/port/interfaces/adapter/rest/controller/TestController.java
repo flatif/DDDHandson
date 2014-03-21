@@ -1,4 +1,4 @@
-package dddhandson.port.interfaces.adapter.rest.controller;
+package dddhandson.infrastructure.port.interfaces.adapter.rest.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

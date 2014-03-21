@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import dddhandson.application.command.support.CommandHandler;
-import dddhandson.domain.support.Command;
+import dddhandson.application.command.support.Command;
 
 public class MapCommandDispatcherTest {
 

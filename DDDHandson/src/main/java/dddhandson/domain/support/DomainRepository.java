@@ -2,14 +2,11 @@ package dddhandson.domain.support;
 
 import java.io.Serializable;
 
-/**
- * Repository DDD, e' anche un repository spring data, ma nasconde l'id di persitenza, il tipo dell'id di persistenza
- * e' definito nel layer supertype @link Entity 
- */
-public interface DomainRepository<ID extends Serializable> {
+public interface DomainRepository<E extends DomainEntity<ID>, ID extends Serializable> {
+
+    //TODO: Aggiungere un header custom all'evento per non passare il class qui
+	E findByIdentity(ID domainIdentity, Class<E> entityClass);
 	
-	<E extends EventSourcedDomainEntity<ID>> E findByIdentity(ID domainIdentity, Class<E> entityClass);
-	
-	void save(EventSourcedDomainEntity<ID> entity);
+	void save(E entity);
 	
 }

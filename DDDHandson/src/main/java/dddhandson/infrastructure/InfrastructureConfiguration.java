@@ -8,7 +8,7 @@ import dddhandson.domain.support.EventPublisher;
 import dddhandson.domain.support.EventSourcingDomainRepository;
 import dddhandson.domain.support.EventStore;
 import dddhandson.infrastructure.eventpublisher.GuavaEventPublisher;
-import dddhandson.port.persistence.eventsourcing.adapter.memorydb.MemoryEventStore;
+import dddhandson.infrastructure.port.persistence.eventsourcing.adapter.memorydb.MemoryEventStore;
 
 @Configuration
 public class InfrastructureConfiguration {

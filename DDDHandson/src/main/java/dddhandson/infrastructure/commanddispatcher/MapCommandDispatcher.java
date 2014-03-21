@@ -11,8 +11,8 @@ import java.util.Map;
 import com.google.common.base.Predicate;
 
 import dddhandson.application.command.support.CommandHandler;
-import dddhandson.domain.support.Command;
-import dddhandson.domain.support.CommandDispatcher;
+import dddhandson.application.command.support.Command;
+import dddhandson.application.command.support.CommandDispatcher;
 
 public class MapCommandDispatcher implements CommandDispatcher{
 	

@@ -10,7 +10,7 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
     <!-- Load @Controllers only -->
-    <context:component-scan base-package="dddhandson.port.interfaces.adapter.rest.controller" use-default-filters="false">
+    <context:component-scan base-package="dddhandson.infrastructure.port.interfaces.adapter.rest.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
